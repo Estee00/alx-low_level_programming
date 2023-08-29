@@ -5,17 +5,16 @@
  * @s: pointed destination
  * @b: constant byte
  * @n: bytes
- * Return: always 0 (success)
+ * Return: changed array with new value for n bytes
  */
-char *_memcpy(char *dest, char *src, unsigned int n)
+char *_memset(char *s, char b, unsigned int n)
 {
-	unsigned int i;
-	char *dest;
-	int n;
-	int b;
-	char s;
+	int i = 0;
 	
-	for (i = 0; i < n; i++)
+	for (; n > 0; i++)
+	{
 		s[i] = b;
+		n--;
+	}
 	return (s);
 }
